@@ -1,0 +1,13 @@
+{
+  "name": "openmrs-react-2",
+  "version": "0.1.0",
+  "description": "A backend express server example",
+  "main": "index.js",
+  "repository": "https://github.com/PermissionError/openmrs-react-2",
+  "author": "PermissionError",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
