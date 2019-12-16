@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "categoryId": "c1",
+      "name": "GCI Stickers (3)",
+      "unit": "Bundle",
+      "pricePerUnit": 5.0,
+      "stocks": "25"
+    },
+    {
+      "id": "p2",
+      "categoryId": "c1",
+      "name": "GCI Pins (3)",
+      "unit": "Bundle",
+      "pricePerUnit": 10.0,
+      "stocks": "30"
+    },
+    {
+      "id": "p3",
+      "categoryId": "c2",
+      "name": "OpenMRS Stickers",
+      "unit": "Bundle",
+      "pricePerUnit": 5.0,
+      "stocks": "25"
+    },
+    {
+      "id": "p4",
+      "categoryId": "c2",
+      "name": "OpenMRS Mug",
+      "unit": "unit",
+      "pricePerUnit": 5.0,
+      "stocks": "25"
+    },
+    {
+      "id": "p5",
+      "categoryId": "c3",
+      "name": "OpenMRS Inc Staff T-Shirt",
+      "unit": "unit",
+      "pricePerUnit": 15,
+      "stocks": "50"
+    },
+    {
+      "id": "p6",
+      "categoryId": "c3",
+      "name": "OpenMRS Inc Staff Jacket",
+      "unit": "unit",
+      "pricePerUnit": 25,
+      "stocks": "30"
+    },
+    {
+      "id": "p7",
+      "categoryId": "c1",
+      "name": "OpenMRS Heart GCI Mug",
+      "unit": "unit",
+      "pricePerUnit": 7.5,
+      "stocks": "35"
+    },
+    {
+      "id": "p8",
+      "categoryId": "c2",
+      "name": "OpenMRS T-Shirt",
+      "unit": "unit",
+      "pricePerUnit": 15,
+      "stocks": "30"
+    },
+    {
+      "id": "p9",
+      "categoryId": "c4",
+      "name": "Toy Scalpel",
+      "unit": "unit",
+      "pricePerUnit": 10.0,
+      "stocks": "50"
+    },
+    {
+      "id": "p10",
+      "categoryId": "c2",
+      "name": "OpenMRS Laptop Case",
+      "unit": "unit",
+      "pricePerUnit": 10.0,
+      "stocks": "10"
+    },
+    {
+      "id": "s1",
+      "categoryId": "c5",
+      "name": "LIMITED: OpenMRS + GCI 2019 Grand Prize Winner's Jacket",
+      "unit": "unit",
+      "pricePerUnit": 0.0,
+      "stocks": "2"
+    },
+    {
+      "id": "s2",
+      "categoryId": "c5",
+      "name": "LIMITED: OpenMRS + GCI 2019 Runner-Up's Scarf",
+      "unit": "unit",
+      "pricePerUnit": 0.0,
+      "stocks": "4"
+    },
+    {
+      "id": "s3",
+      "categoryId": "c5",
+      "name": "LIMITED: OpenMRS + GCI 2019 Finalist's T-Shirt",
+      "unit": "unit",
+      "pricePerUnit": 0.0,
+      "stocks": "6"
+    }
+  ]
+}
