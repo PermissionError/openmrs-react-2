@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "id": "c1",
+      "categoryName": "GCI Merch"
+    },
+    {
+      "id": "c2",
+      "categoryName": "OpenMRS Merch"
+    },
+    {
+      "id": "c3",
+      "categoryName": "Staff Uniform (Not for public use)"
+    },
+    {
+      "id": "c4",
+      "categoryName": "Other"
+    },
+    {
+      "id": "c5",
+      "categoryName": "Special"
+    }
+  ]
+}
