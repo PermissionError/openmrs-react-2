@@ -1,54 +1,46 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
-const utilities = require('./utilities')
+const dataServices = require('./dataServices');
 
-const config = require('./package.json')
-const products = require('./src/data/products')
+const config = require('./package.json');
 
-//Returns information about the app
+// Returns information about the app
 app.get('/info', (req, res) => {
-	res.send({serverName: config.name, serverVersion: config.version})
-})
+  res.send({serverName: config.name, serverVersion: config.version});
+});
 
-//Returns all products, defined in src/data/products.json
+// Returns all products, defined in src/data/products.json
 app.get('/products/all', (req, res) => {
-	let productMap = []
-	products.products.forEach(product => {
-		utilities.injectCategoryName(product)
-		productMap.push(product)
-	})
-	res.send(productMap)
-})
+  res.send(dataServices.getCombinedProductMap());
+});
 
-//Returns a single product with the provided ID in url params
+// Returns a single product with the provided ID in url params
 app.get('/product/:id', (req, res) => {
-	let product = utilities.getProductById(req.params.id)
-	if(product) {
-		if(category) {
-			utilities.injectCategoryName(product)
-			res.send(product)
-		} else {
-			utilities.sendInternalServerErrorResponse(res)
-		}
-	} else {
-		utilities.sendNotFoundResponse(res, 'No product found with given ID')
-	}
-})
+  const productMap = dataServices.getCombinedProductMap();
+  const product = productMap && productMap[req.params.id];
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send('No product found with given ID');
+  }
+});
 
-//Returns a single category with its associated products with the provided ID in url params
+// Returns a category with associated products with provided ID in url params
 app.get('/category/:ctyId', (req, res) => {
-	let category = utilities.getCategoryById(req.params.ctyId)
-	if(category) {
-		let result = {
-			category,
-			products: utilities.getProductsByCategoryId(category.id)
-		}
-		res.send(result)
-	} else {
-		utilities.sendNotFoundResponse(res, 'No category found with given ID')
-	}
-})
+  const categoryMap = dataServices.getCategories();
+  const category = categoryMap && categoryMap[req.params.ctyId];
+  if (category) {
+    const result = {
+      category,
+      products: Object.values(dataServices.getCombinedProductMap())
+        .filter(product => product.categoryId === category.id),
+    };
+    res.send(result);
+  } else {
+    res.status(404).send('No category found with given ID');
+  }
+});
 
-app.listen(port, () => console.log('openmrs-react-2 started successfully.'))
+app.listen(port, () => console.log('openmrs-react-2 started successfully.'));
